@@ -1,7 +1,7 @@
-Hyrox Web Scraper
+# Hyrox Web Scraper
 This project is a web scraper designed to collect detailed information about participants from the Hyrox race event website. It is implemented using Python and utilizes libraries such as requests, BeautifulSoup, and csv for web scraping and data handling.
 
-Features
+# Features
 Scrapes participant details, scoring information, workout results, and overall times from the Hyrox website.
 Dynamically constructs URLs to access race event pages based on specified seasons and divisions.
 Handles pagination to ensure comprehensive data collection across multiple pages.
@@ -9,7 +9,8 @@ Extracts additional information such as gender and event ID from the URL query p
 Flattens nested data structures and organizes the scraped data into a structured format.
 Saves the scraped data to a CSV file for further analysis or use in other applications.
 Provides progress tracking and time estimation during the scraping process.
-Usage
+
+# Usage
 Clone the repository:
 
 Copy code
@@ -25,7 +26,8 @@ Copy code
 python scraper.py
 The scraper will retrieve the participant details for each event, division, and gender combination. Progress and time estimation will be displayed during the scraping process.
 Once the scraping is complete, the scraped data will be saved to a CSV file named participants.csv in the specified directory.
-Data Structure
+
+# Data Structure
 The scraped data is structured as follows:
 
 Participant details are stored in a dictionary with keys such as "Name", "Age Group", "Number", and "Nat".
