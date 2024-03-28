@@ -1,41 +1,54 @@
-# Hyrox Race Insights: A Comprehensive Web Scraping to Visualization Pipeline
+Hyrox Web Scraper
+This project is a web scraper designed to collect detailed information about participants from the Hyrox race event website. It is implemented using Python and utilizes libraries such as requests, BeautifulSoup, and csv for web scraping and data handling.
 
-# Executive Summary
-In this data engineering project we developed a comprehensive web scraping solution using Google Colab to harvest race results across multiple seasons from hyrox.com. The project involved creating a sophisticated data model, setting up a PostgreSQL database for structured data storage, and employing advanced data cleaning techniques to ensure data integrity. This clean, structured data was then visualized using Metabase, providing insightful dashboards and reports. The successful execution of this project from data extraction to insightful visualization showcases a high level of technical proficiency, problem-solving skills, and an adeptness at managing the entire data pipeline, which can significantly contribute to data-driven decision-making processes.
+Features
+Scrapes participant details, scoring information, workout results, and overall times from the Hyrox website.
+Dynamically constructs URLs to access race event pages based on specified seasons and divisions.
+Handles pagination to ensure comprehensive data collection across multiple pages.
+Extracts additional information such as gender and event ID from the URL query parameters.
+Flattens nested data structures and organizes the scraped data into a structured format.
+Saves the scraped data to a CSV file for further analysis or use in other applications.
+Provides progress tracking and time estimation during the scraping process.
+Usage
+Clone the repository:
 
+Copy code
+git clone https://github.com/your-username/hyrox-web-scraper.git
+Install the required dependencies:
 
-# Method(s)
+Copy code
+pip install requests beautifulsoup4
+Modify the events list in the code to specify the desired events and seasons to scrape.
+Run the scraper:
 
+Copy code
+python scraper.py
+The scraper will retrieve the participant details for each event, division, and gender combination. Progress and time estimation will be displayed during the scraping process.
+Once the scraping is complete, the scraped data will be saved to a CSV file named participants.csv in the specified directory.
+Data Structure
+The scraped data is structured as follows:
 
-1 –– Web Scraping Tool Development:
-Developed a web scraper using Python in Google Colab
-The scraper is designed to extract race results from a specified season from a Hyrox.com
-Implemented error handling and logging to ensure robustness and traceability of the scraping process
-Used time estimation to provide feedback on the scraping progress
+Participant details are stored in a dictionary with keys such as "Name", "Age Group", "Number", and "Nat".
+Scoring information is stored in a dictionary with keys such as "Division" and "Race".
+Workout results are stored as a list of dictionaries, each containing the split name, time, and place.
+Overall time is stored in a dictionary with keys such as "Overall Time", "Rank (AG)", and "Rank (M/W)".
+Gender and event ID are extracted from the URL query parameters and added as separate fields.
+The data is flattened and organized into a CSV file with the following columns:
 
-2 –– Data Modeling and Database Setup:
-Created a data model to structure the scraped data effectively
-Set up a PostgreSQL database, aligning with the defined data model to store the race results
-Configured the database schema with tables, columns, relationships, and constraints
+Event ID
+Participant_Name
+Gender
+Participant_Age Group
+Participant_Number
+Participant_Nat
+Scoring_Race
+Scoring_Division
+Overall Time_Rank (M/W)
+Overall Time_Rank (AG)
+Overall Time_Overall Time
+Specific split columns (e.g., Running_1, 1000m_SkiErg, etc.)
+Contributing
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-3 –– Data Cleaning and Transformation:
-Utilized another Google Colab notebook to clean and transform the scraped data
-Flattened nested JSON structures and removed unnecessary fields to fit the PostgreSQL schema
-Implemented Python functions for data consistency checks and normalization.
-
-4 –– Data Import into PostgreSQL:
-Imported the cleaned and structured data into the PostgreSQL database
-Ensured that the import process matched the data types and constraints of the database schema
-Performed any necessary data type conversions and dealt with missing values during the import
-
-5 –– Data Analysis and Visualization:
-Connected the PostgreSQL database to Metabase running on localhost
-Used Metabase to create visualizations, dashboards, and reports from the race results data
-Enabled stakeholders to interact with the data through Metabase's user-friendly interface for insights and decision-making
-
-6 –– Project Management and Version Control:
-Used Git for version control to manage the codebase for the scraper and data processing scripts
-
-7 –– Testing and Quality Assurance:
-Conducted thorough testing of the web scraping and data import processes to ensure data integrity
-Performed quality assurance on the PostgreSQL setup and Metabase configurations to ensure accuracy and reliability of the visualizations
+License
+This project is licensed under the MIT License.
