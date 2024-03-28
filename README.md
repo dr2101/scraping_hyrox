@@ -11,21 +11,7 @@ Saves the scraped data to a CSV file for further analysis or use in other applic
 Provides progress tracking and time estimation during the scraping process.
 
 # Usage
-Clone the repository:
-
-Copy code
-git clone https://github.com/your-username/hyrox-web-scraper.git
-Install the required dependencies:
-
-Copy code
-pip install requests beautifulsoup4
-Modify the events list in the code to specify the desired events and seasons to scrape.
-Run the scraper:
-
-Copy code
-python scraper.py
-The scraper will retrieve the participant details for each event, division, and gender combination. Progress and time estimation will be displayed during the scraping process.
-Once the scraping is complete, the scraped data will be saved to a CSV file named participants.csv in the specified directory.
+Copy Collab Notebook: https://colab.research.google.com/drive/1HGHGh4XYU-Vx9T4NOTK4PkbCehHPGkEB?usp=drive_link
 
 # Data Structure
 The scraped data is structured as follows:
